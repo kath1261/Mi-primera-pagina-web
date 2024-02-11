@@ -1,0 +1,15 @@
+header{
+    background-color: #BBBBBB;
+}
+
+nav li{
+    display: inline;
+}
+
+nav a{ /** Se alterará el estilo de la página, mas no el contenido **/
+    text-transform: uppercase; /** Mayúsculas **/
+    color: #000000; /** Color de texto **/
+    font-weight: bold; /** Texto en negritas **/
+    font-size: 22px; /** Tamaño de texto **/
+    text-decoration: none; /** Quitar el rayado de los enlaces **/
+}
