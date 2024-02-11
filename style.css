@@ -1,0 +1,67 @@
+/**
+- En este archivo definiremos todas las clases de css que iremos adicionando y alterando. 
+- Todo lo que esté dentro de p{} engloba a todas las p que existan.
+- em strong: solo aplicará para el texto que tenga ambas etiquetas.
+- color: es para el color del texto.
+- background: color de fondo.
+- Hexadecimales: las dos primeras posiciones representan el rojo _ _, los otros dos _ _ el verde y los ultimos dos _ _ al azul. En inglés: rgb(0,0,0) donde 0 es el menor y 255 el máximo.
+- Width: Propiedad para la anchura del elemento.
+- Height: Propiedad para la altura del elemento.
+- Padding: Ajustar el margen interno del elemento
+- Margin: Ajustar el margen interno del elemento
+- La etiqueta para usar listas no ordenadas es <ul>, y cada ítem de la lista necesita ser marcado por un <li>
+**/
+
+.titulo-principal {
+    padding-left: 30px;
+    text-align: center;
+}
+
+#banner{
+    width: 100%;
+}
+
+.principal{
+    background: #ffffff;
+    padding: 20px;
+}
+
+.titulo-centralizado{
+     text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+em strong{
+    color: #ee1e90;
+}
+
+#mision{
+    font-size: 20px;
+}
+
+.diferenciales{
+    background: #ffffff;
+    padding: 30px;
+}
+
+h3{
+    text-align: center;
+}
+
+.items{
+    font-style: italic;
+}
+
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.imagenDiferenciales{
+    width: 50%;
+}
