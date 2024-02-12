@@ -1,67 +1,154 @@
-/**
-- En este archivo definiremos todas las clases de css que iremos adicionando y alterando. 
-- Todo lo que esté dentro de p{} engloba a todas las p que existan.
-- em strong: solo aplicará para el texto que tenga ambas etiquetas.
-- color: es para el color del texto.
-- background: color de fondo.
-- Hexadecimales: las dos primeras posiciones representan el rojo _ _, los otros dos _ _ el verde y los ultimos dos _ _ al azul. En inglés: rgb(0,0,0) donde 0 es el menor y 255 el máximo.
-- Width: Propiedad para la anchura del elemento.
-- Height: Propiedad para la altura del elemento.
-- Padding: Ajustar el margen interno del elemento
-- Margin: Ajustar el margen interno del elemento
-- La etiqueta para usar listas no ordenadas es <ul>, y cada ítem de la lista necesita ser marcado por un <li>
-**/
+header{
+    background-color: #BBBBBB;
+    padding: 20px 0;
+}
 
-.titulo-principal {
-    padding-left: 30px;
+.caja{
+    width: 940px;
+    position: relative; /** La posición static viene por defecto y significa que el navegador la coloca debajo del h1 en una posición estática.
+    La posición relative le estamos diciendo que en función a la posición actual yo puedo alterar una nueva posición, es donde las propiedades top y bottom especifican su desplazamiento vertical y las propiedades left y right su desplazamiento horizontal.
+    La posición absoluta en función a los valores que una defina.Se manejan las mismas propiedades de top, right.**/
+    margin: 0 auto;/** Alinear un div al centro se usa el auto.  Delegamos para que el navegador haga la cuenta al calcular la largura restante, dividir entre dos y agregar la mitad en cada uno de los lados.**/
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px; /** Arriba, Derecha, Abajo, Izquierda **/
+}
+
+nav a{ /** Se alterará el estilo de la página, mas no el contenido **/
+    text-transform: uppercase; /** Todas las letras en Mayúsculas **/
+    color: #000000; /** Color de texto **/
+    font-weight: bold; /** Texto en negritas **/
+    font-size: 22px; /** Tamaño de texto **/
+    text-decoration: none; /** Quitar el rayado de los enlaces **/
+}
+
+nav a:hover{
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+.productos{ /** Selector de nuestra lista **/
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px; /** El elemento aumenta su tamaño. Cuando declaro que existe un espaciamiento interno, estoy aumentando el contenido. **/
+}
+
+.productos li{ /** Cada item de la lista **/
+    display: inline-block; /** *Inline: usar el tamaño del espacio que ocupa cada uno de los elementos tanto vertical u horizontal. *Inline-block: colocar los elementos en forma horizontal uno a lado del otro y también configurar los espacios y las propiedades internas del elemento. *Block: coloca los elementos ocupando un 100% el tamaño horizontal. **/
     text-align: center;
-}
-
-#banner{
-    width: 100%;
-}
-
-.principal{
-    background: #ffffff;
-    padding: 20px;
-}
-
-.titulo-centralizado{
-     text-align: center;
-}
-
-p{
-    text-align: center;
-}
-
-em strong{
-    color: #ee1e90;
-}
-
-#mision{
-    font-size: 20px;
-}
-
-.diferenciales{
-    background: #ffffff;
-    padding: 30px;
-}
-
-h3{
-    text-align: center;
-}
-
-.items{
-    font-style: italic;
-}
-
-ul{
-    display: inline-block;
+    width: 30%;
     vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
+    margin: 0 1.5%; /**Espacio externo **/
+    padding: 30px 20px;
+    box-sizing: border-box; /** Los 20px no van a sobrepasar los 940 px del width**/
+    border: 3px solid #000000; /** Ahorramos las tres lineas de border-color: #000000; border-width: 2px; y border-style: solid; **/
+    border-radius: 10px; /** Redondear las esquinas del borde **/
 }
 
-.imagenDiferenciales{
+/** En el hover, mapeamos el comportamiento del mouse por encima del elemento, y podemos usar esto para descartar visualmente el elemento. **/
+
+.productos li:hover{ /**Cuando el usuario pasa el cursor sobre el elemento. **/
+    border-color: #c78c19;
+}
+
+.productos li:active{ /**Cuando un elemento está siendo activado por el usuario. Cambiar el estilo visual de un enlance o botón para indicar que está siendo presionado. **/
+    border-color: #088c19;
+}
+
+.productos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos li:hover h2{
+    font-size: 33px;
+}
+
+.producto-descripcion{
+    font-size: 18px;
+}
+
+.producto-precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    background: url(imagenes/bg.jpg);
+    padding: 10px;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px;
+}
+
+main{
+    width: 940px;
+    margin: 0 auto;
+}
+
+form{
+    margin: 40px;
+}
+
+form label, form legend{ 
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padron{ 
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px; /** La propiedad padding sirve para cambiar el espaciado interno, entre el contenido y el borde. **/
     width: 50%;
+}
+
+.checkbox{
+    margin: 20px 0;
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: rgb(233, 32, 143);
+    border-radius: 5px;
+    border-color: rgb(233, 32, 143);
+    transition: 1s all; /** Utilizamos la propiedad transition para proporcionar una transición visual de un elemento. **/
+    cursor: pointer; /** modificar el estilo del puntero del mouse, al pasar sobre un determinado elemento **/
+}
+
+.enviar:hover{
+    background: rgb(134, 3, 91);
+    transform: scale(1.1); /** Utilizamos la propiedad transform: scale() para aumentar un elemento proporcionalmente. **/
+}
+
+table{
+    margin: 40px 100px;
+}
+
+thead{
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td,th{
+    border: 1px solid #000000;
+    padding: 8px 15px;
 }

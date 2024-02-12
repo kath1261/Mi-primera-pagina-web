@@ -1,0 +1,119 @@
+<!-- 
+*sylesheet significa que es una hoja de estilo.
+*<!DOCTYPE>, <html>,<head> y <body> son fundamentales en la estructura de una página.
+*La etiqueta <h1> envuelve la etiqueta de imagen, que es donde buscamos el contenido que será expuesto.
+*La etiqueta <a> sirve justamente para colocar un link, que nos va a llevar a otro punto en internet.
+*Un formulario puede servir, entre otras cosas, para enviar datos a otra página, capturar información que el usuario escribe y enviar datos a un servidor.
+*La etiqueta <label> es una etiqueta para la entrada de datos para el <input>.
+*La etiqueta <input>, para la entrada de datos del usuario. **/
+*Al crear un formulario HTML, la etiqueta que lo representa es <form>.
+*La etiqueta <input>, para la entrada de datos del usuario.
+*Colocamos un id al input y asociamos ese id al atributo for del label.
+*La propiedad name solo se puede “completar” una vez, es por eso que, cuando seleccionamos uno de los ítems, se anula el otro, manteniendo solamente uno seleccionado.
+*La estructura de la etiqueta <select> está compuesta de uno o más <option>.
+*El alt no es una etiqueta, es una propiedad que usamos para proporcionar una alternativa a las imágenes cuando no se ven en algunos navegadores.
+*Legend: Es la etiqueta <legend> que usamos para un título de un grupo de campos en cualquier formulario.
+*La etiqueta <fieldset> se usa para crear una división en nuestro formulario, con uno o más <input>.
+*Mostrar una sugerencia para completar los campos, a través del atributo placeholder.
+*Cómo configurar campos obligatorios, o sea, exigir al usuario para que algunos campos sean completados, a través del atributo required.
+*Algunos tipos de inputs para el celular: email, tel, number, password, date, datetime, month y search.
+*Cómo dejar una opción marcada por padrón en nuestros input radio y checkbox a través del atributo checked.
+*Utilizamos la etiqueta <tr> para marcar la fila de una tabla.
+*Utilizamos la etiqueta <td> para marcar una columna de una tabla.
+-->
+
+
+<!DOCTYPE html>
+
+<HTML>
+    <head>
+        <meta charset="UTF-8">
+        <title>Contacto - Barbería Alura</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="caja">
+                <h1> <img src="imagenes/logo.png" alt="Logo de la Barbería Alura"></h1>
+                <nav>
+                    <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <form>
+                <label for="nombreapellido">Nombre y Apellido:</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="correoelectronico">Correo Electrónico:</label>
+                <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" class="input-padron" required placeholder="(XX) XXXX XXXX">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input-padron"></textarea>
+
+            <fieldset>
+                <legend>¿Cómo te gustaría que lo contactemos?</legend>
+
+                <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">Email</label>
+
+                <label for="radio-telefono"><input type="radio" name="contacto" value="telefono" id="radio-telefono">Teléfono</label>
+
+                <label for="radio-whatssapp"><input type="radio" name="contacto" value="whatssapp" id="radio-whatssapp" checked>WhatssApp</label>
+            </fieldset>
+
+        <fieldset>
+            <legend>¿En qué horario prefiere ser atendido?</legend>
+            <select>
+                <option>Mañana</option>
+                <option>Tarde</option>
+                <option>Noche</option>
+            </select>
+        </fieldset>
+
+            <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura?</label>
+
+                <input type="submit" value="Enviar formulario" class="enviar">
+            </form>
+
+            <table>
+                <thead>
+                    <tr> 
+                        <th>Día</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>8 a.m. - 8 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td>Miércoles</td>
+                        <td>8 a.m. - 8 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>8 a.m. - 8 p.m.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </main>
+
+        <footer>
+            <img src="imagenes/logo-blanco.png" alt="Logo de la Barbería Alura">
+            <p class="copyright">&copy Copyright Barbería Alura - 2024</p>
+            <p class="copyright">Realizado por Katherine ❤</p>
+        </footer>
